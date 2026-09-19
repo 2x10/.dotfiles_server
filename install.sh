@@ -10,5 +10,8 @@ fi
 
 cp -r .src/src/.* ~ 
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/kiyoon/treemux ~/.tmux/plugins/treemux
+
 echo -e "successfully installed server dotfiles"
 

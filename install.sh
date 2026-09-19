@@ -2,12 +2,6 @@
 
 echo -e "installing dotfiles. . ."
 
-if [ -f "~/.backup.zshrc" ]; then
-    mv "~/.zshrc" "~/.backup.zshrc"
-else
-    echo -e "'~/.backup.zshrc' already exists. . . skipping"
-fi
-
 if [ -f "~/.zuser" ]; then
     cp ".zuser" "~/.zuser"
 else

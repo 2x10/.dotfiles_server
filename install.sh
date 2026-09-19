@@ -14,7 +14,7 @@ else
     echo -e "'~/.zuser' already exists. . . skipping"
 fi
 
-cp -r src/.* ~ 
+cp -r .src/src/.* ~ 
 
 echo -e "successfully installed server dotfiles"
 

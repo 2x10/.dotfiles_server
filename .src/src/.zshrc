@@ -12,6 +12,7 @@ source ~/.zconfig
 source ~/.zfunc
 source ~/.zalias
 source ~/.zuser
+source ~/.zshenv
 
 # - - - history - - -
 HISTSIZE=10000000

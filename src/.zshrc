@@ -18,10 +18,6 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zhistory
 
-# - - - fuzzy search (fzf) integration - - -
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
 # - - - optimizations - - -
 setopt AUTO_CD
 #setopt CORRECT
@@ -36,5 +32,4 @@ bindkey "^[[1;5D" backward-word
 autoload -U select-word-style
 select-word-style bash
 
-# - - - node version manager - - -
-source /usr/share/nvm/init-nvm.sh
+

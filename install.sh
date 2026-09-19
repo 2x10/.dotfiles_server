@@ -1,9 +1,9 @@
-#/bin/sh
+#/bin/zsh
 
 echo -e "installing dotfiles. . ."
 
 if [ -f "~/.backup.zshrc" ]; then
-    cp "~/.zshrc" "~/.backup.zshrc"
+    mv "~/.zshrc" "~/.backup.zshrc"
 else
     echo -e "'~/.backup.zshrc' already exists. . . skipping"
 fi

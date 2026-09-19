@@ -1,1 +1,1 @@
-[[ -f ~/.zshrc ]] && . ~/.zshrc
+/home/poison/.zprofile

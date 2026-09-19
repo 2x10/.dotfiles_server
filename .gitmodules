@@ -1,0 +1,3 @@
+[submodule ".src/src/.tmux/plugins/treemux"]
+	path = .src/src/.tmux/plugins/treemux
+	url = https://github.com/kiyoon/treemux

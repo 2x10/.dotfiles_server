@@ -1,1 +1,7 @@
-/home/poison/.zprofile
+#/usr/bin/zsh
+
+#
+# ~/.zprofile
+#
+
+[[ -f ~/.zshrc ]] && . ~/.zshrc

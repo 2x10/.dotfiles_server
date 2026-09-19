@@ -1,1 +1,27 @@
-/home/poison/.zalias
+#/usr/bin/zsh
+
+#
+# ~/.zalias
+#
+
+if [[ "$TERM" == "linux" ]]; then
+	alias ls='ls --color=auto'
+	alias la='ls -a'
+	alias ll='ls -lah'
+else
+	alias ls='lsd --color=auto'
+	alias la='lsd -a'
+	alias ll='lsd -lah'
+fi
+
+alias grep='grep --color=auto'
+alias cls='clear'
+alias q='exit'
+alias quit='q'
+alias reload='source ~/.zshrc && tmux source-file ~/.tmux.conf'
+alias fetch="clear && fastfetch"
+alias update="~/Scripts/update.sh"
+
+alias nano="nvim"
+alias vim="nvim"
+alias vi="vim"

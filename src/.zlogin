@@ -1,1 +1,5 @@
-/home/poison/.zlogin
+#/usr/bin/zsh
+
+#
+# ~/.zlogin
+#

@@ -1,1 +1,9 @@
-/home/poison/.zlogout
+#/usr/bin/zsh
+
+#
+# ~/.zlogout
+#
+
+if [[ "$SHLVL" == 1 ]]; then
+    [[ -x /usr/bin/clear_console ]] && /usr/bin/clear_console -q
+fi

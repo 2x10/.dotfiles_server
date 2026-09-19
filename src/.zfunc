@@ -1,1 +1,70 @@
-/home/poison/.zfunc
+#/usr/bin/zsh
+
+#
+# ~/.zfunc
+#
+
+# - - - functions - - -
+format_git_branch() {
+    local BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [[ -n ${BRANCH} ]] ; then
+	    if [[ "$TERM" == "linux" ]]; then
+	    	echo "${col1}[${col2}${BRANCH}${col1}]"
+
+	    else
+	    	echo "${col1}[${col2}${BRANCH}${col1}]"
+	    fi
+    fi
+}
+
+soft_copy() {
+    if [ -f "$1" ]; then
+        cp "$1" "$2"
+    else
+        echo -e "$1" exists. . . skipping
+    fi
+}
+
+toggle_tmux() {
+	if [[ -n "$TMUX" ]]; then
+		tmux detach
+	elif [[ -z "$SSH_TTY" ]]; then
+		BUFFER='tmux new-session -A -s main'
+		zle accept-line
+	elif [[ -n "$SSH_TTY" ]]; then
+		tmux new-session -A -s main
+	fi
+}
+
+zle -N toggle_tmux
+
+get_current_time() {
+	echo "$(date '+%H:%M')"
+}
+
+get_current_date() {
+ 	echo "$(date '+%d.%m.%Y')"
+}
+
+log() {
+	less "/var/log/$1"
+}
+
+log_err() {
+	dmesg | grep -E 'volt|throt|power|err'
+}
+
+temp() {
+    for z in /sys/class/thermal/thermal_zone*; do
+        printf '%s: %s %s\n' \
+            "$z" \
+            "$(cat "$z/type")" \
+            "$(awk '{printf "%.1f°C", $1/1000}' "$z/temp")"
+    done
+}
+
+_log() {
+	_files -W /var/log
+}
+
+compdef _log log

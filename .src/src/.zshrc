@@ -11,7 +11,6 @@ zstyle ':completion:*' menu select
 source ~/.zconfig
 source ~/.zfunc
 source ~/.zalias
-source ~/.zuser
 source ~/.zshenv
 
 # - - - history - - -
@@ -27,10 +26,9 @@ setopt AUTO_CD
 bindkey '^[q' toggle_tmux
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-#bindkey "^[[A" history-beginning-search-backward
-#bindkey "^[[B" history-beginning-search-forward
-#bindkey '^I' autosuggest-accept
+bindkey '^H' backward-kill-word
+bindkey '^[^?' backward-kill-word
 autoload -U select-word-style
 select-word-style bash
 
-
+source ~/.zuser

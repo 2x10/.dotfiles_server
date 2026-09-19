@@ -1,5 +1,7 @@
 #/bin/sh
 
+echo -e "installing dotfiles. . ."
+
 if [ -f "~/.backup.zshrc" ]; then
     cp "~/.zshrc" "~/.backup.zshrc"
 else
@@ -15,3 +17,4 @@ fi
 cp src/.* ~/ -r 
 
 echo -e "successfully installed server dotfiles"
+

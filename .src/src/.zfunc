@@ -28,7 +28,7 @@ soft_copy() {
 toggle_tmux() {
 	if [[ -n "$TMUX" ]]; then
 		tmux detach
-	elif [[ -z "$SSH_TTY" ]]; then
+	elif [[ -n "$SSH_TTY" ]]; then
 		BUFFER='tmux new-session -A -s main'
 		zle accept-line
 	elif [[ -n "$SSH_TTY" ]]; then

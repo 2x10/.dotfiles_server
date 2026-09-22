@@ -18,7 +18,7 @@ if [[ -f ~/.zsh/init.zsh ]]; then
     echo -e "'~/.zsh/': user files have already been created. . . skipping"
 else
     echo -n "copying user files to '~/.zsh'. . .   "
-    cp -rv zuser.example/* ~/.zsh/
+    cp -rv user.example/* ~/.zsh/
 fi
 
 echo -n "copying configurations. . .   "

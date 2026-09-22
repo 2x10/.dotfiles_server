@@ -6,14 +6,14 @@ if [[ -f ~/.zshrc ]]; then
     if [[ -f ~/.zshrc.backup ]]; then
         echo -e "'~/.zshrc.backup' already exists. . . not creating backup; skipping"
     else
-        cp -v "~/.zshrc" "~/.zshrc.backup"
+        cp -rv "~/.zshrc" "~/.zshrc.backup"
     fi
 fi
 
 if [[ -f ~/.zuser ]]; then
     echo -e "'~/.zuser' already exists. . . skipping"
 else
-    cp -v "zuser.example" "~/.zuser"
+    cp -rv "zuser.example" "~/.zuser"
 fi
 
 cp -rv .src/src/.* ~ 
@@ -26,5 +26,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-au
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/kiyoon/treemux ~/.tmux/plugins/treemux
 
+source ~/.zshrc
+cd ~
 echo -e "successfully installed server dotfiles"
 

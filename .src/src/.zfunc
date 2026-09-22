@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 #
 # ~/.zfunc
@@ -33,12 +33,39 @@ toggle_tmux() {
     if [[ -n $TMUX ]]; then
         tmux detach
     else
-        BUFFER='tmux new-session -A -s main'
+        BUFFER='tmux new-session -A -s session_00'
         zle accept-line
     fi
 }
 
-zle -N toggle_tmux
+prefix() {
+    echo -n '\n ? '
+
+    local key
+    read -k 1 key
+
+    case "$key" in
+        0 || a )
+            BUFFER='tmux new-session -A -s session_00'
+            ;;
+        #1)
+        #    BUFFER='tmux new-session -A -s session_01'
+        #    ;;
+        #2)
+        #    BUFFER='tmux new-session -A -s session_02'
+        #    ;;
+        #3)
+        #    BUFFER='tmux new-session -A -s session_03'
+        #    ;;
+        #4)
+        #    BUFFER='tmux new-session -A -s session_04'
+        #    ;;
+        *)
+            echo -n "no such bind"
+            ;;
+    esac
+    zle accept-line
+}
 
 get_time() {
 	echo "$(date '+%H:%M')"
@@ -50,6 +77,10 @@ get_date() {
 
 log() {
 	less "/var/log/$1"
+}
+
+_log() {
+	_files -W /var/log
 }
 
 log_err() {
@@ -65,8 +96,8 @@ temp() {
     done
 }
 
-_log() {
-	_files -W /var/log
-}
+
 
 compdef _log log
+zle -N toggle_tmux
+zle -N prefix

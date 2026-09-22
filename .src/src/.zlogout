@@ -1,7 +1,9 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 #
 # ~/.zlogout
 #
 
-if [[ -x /usr/bin/clear ]] /usr/bin/clear
+if [[ -x /bin/clear ]] /bin/clear
+source ~/.zsh/logout.zsh
+

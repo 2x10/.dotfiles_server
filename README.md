@@ -10,4 +10,5 @@ chmod +x install.sh
 ./install.sh
 ```
 
-
+user-made changes that won't be overwritten go in ~/.zsh/init.zsh, which is sourced by .zshrc for example
+that folder also has login.zsh, logout.zsh, profile.zsh and enviroment.zsh which are all sourced by their counterparts in ~/

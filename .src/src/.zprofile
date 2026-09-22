@@ -1,7 +1,8 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 #
 # ~/.zprofile
 #
 
-[[ -f ~/.zshrc ]] && . ~/.zshrc
+source ~/.zshrc
+source ~/.zsh/profile.zsh

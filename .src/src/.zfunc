@@ -25,6 +25,10 @@ soft_copy() {
     fi
 }
 
+get_ip() {
+    ip -4 -o addr show eth0 | awk '{print $4}' | cut -d/ -f1
+}
+
 toggle_tmux() {
     if [[ -n $TMUX ]]; then
         tmux detach
@@ -36,11 +40,11 @@ toggle_tmux() {
 
 zle -N toggle_tmux
 
-get_current_time() {
+get_time() {
 	echo "$(date '+%H:%M')"
 }
 
-get_current_date() {
+get_date() {
  	echo "$(date '+%d.%m.%Y')"
 }
 
@@ -49,7 +53,7 @@ log() {
 }
 
 log_err() {
-	dmesg | grep -E 'volt|throt|power|err'
+	sudo dmesg | grep -E 'volt|throt|power|err'
 }
 
 temp() {

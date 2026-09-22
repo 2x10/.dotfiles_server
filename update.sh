@@ -1,17 +1,10 @@
 #/bin/sh
 
-echo -e "updating dotfiles. . ."
+echo -e "updating dotfiles. . .\n"
 
-echo -e "updating fzf. . ."
-cd ~/.zsh/plugins/fzf && git fetch origin && git pull
-echo -e "updating zsh-autosuggestions. . ."
-cd ~/.zsh/plugins/zsh-autosuggestions && git fetch origin && git pull
-echo -e "updating tmux plugin manager. . ."
-cd ~/.tmux/plugins/tpm && git fetch origin && git pull
-echo -e "updating treemux. . ."
-cd ~/.tmux/plugins/treemux && git fetch origin && git pull
-
-git fetch origin
-git pull
-git status
+cd ~/.dotfiles_server && echo -n "$(pwd): updating main repo. . .   " && git fetch origin && git pull
+cd ~/.zsh/plugins/fzf && echo -n "$(pwd): updating fzf. . .   " && git fetch origin && git pull
+cd ~/.zsh/plugins/zsh-autosuggestions && echo -n "$(pwd): updating zsh-autosuggestions. . .   "  && git fetch origin && git pull
+cd ~/.tmux/plugins/tpm && echo -n "$(pwd): updating tmux plugin manager. . .   " && git fetch origin && git pull
+cd ~/.tmux/plugins/treemux && echo -n "$(pwd): updating treemux. . .   " && git fetch origin && git pull
 

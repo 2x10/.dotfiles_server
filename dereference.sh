@@ -1,5 +1,5 @@
 rm -rf .src
 mkdir -p .src/src
 rsync -aL .links/.* .src/src
-rm -rf .src/src/.tmux/plugins/tpm
-rm -rf .src/src/.tmux/plugins/treemux
+rm -rf .src/src/.tmux/plugins
+rm -rf .src/src/.zsh/plugins

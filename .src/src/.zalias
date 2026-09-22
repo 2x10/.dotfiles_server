@@ -1,4 +1,4 @@
-#/usr/bin/zsh
+#!/usr/bin/zsh
 
 #
 # ~/.zalias
@@ -9,12 +9,22 @@ if [[ "$TERM" == "linux" ]]; then
 	alias la='ls -a'
 	alias ll='ls -lah'
 else
-	alias ls='lsd --color=auto'
-	alias la='lsd -a'
-	alias ll='lsd -lah'
+    if [[ -x /usr/bin/lsd ]]; then
+    	alias ls='lsd --color=auto'
+    	alias la='lsd -a'
+    	alias ll='lsd -lah'
+    fi
+
+    if [[ -x /usr/bin/bat ]]; then
+        alias cat="bat -p -P"
+        alias less="bat -p"
+    fi
 fi
 
 alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 alias cls='clear'
 alias q='exit'
 alias quit='q'

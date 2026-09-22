@@ -1,7 +1,7 @@
-#/usr/bin/zsh
+#!/usr/bin/zsh
 
 #
-# ~/.zconfig
+# ~/.zprompt
 #
 
 autoload -U colors && colors

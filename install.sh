@@ -8,12 +8,12 @@ if [[ -f ~/.zshrc ]]; then
     else
         cp "~/.zshrc" "~/.zshrc.backup"
     fi
-    
-    if [[ -f ~/.zuser ]]; then
-        echo -e "'~/.zuser' already exists. . . skipping"
-    else
-        cp "zuser.example" "~/.zuser"
-    fi
+fi
+
+if [[ -f ~/.zuser ]]; then
+    echo -e "'~/.zuser' already exists. . . skipping"
+else
+    cp "zuser.example" "~/.zuser"
 fi
 
 cp -r .src/src/.* ~ 

@@ -1,4 +1,4 @@
-#/bin/sh
+#!/usr/bin/zsh
 
 echo -e "updating dotfiles. . .\n"
 

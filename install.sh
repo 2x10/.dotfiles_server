@@ -6,17 +6,17 @@ if [[ -f ~/.zshrc ]]; then
     if [[ -f ~/.zshrc.backup ]]; then
         echo -e "'~/.zshrc.backup' already exists. . . not creating backup; skipping"
     else
-        cp "~/.zshrc" "~/.zshrc.backup"
+        cp -v "~/.zshrc" "~/.zshrc.backup"
     fi
 fi
 
 if [[ -f ~/.zuser ]]; then
     echo -e "'~/.zuser' already exists. . . skipping"
 else
-    cp "zuser.example" "~/.zuser"
+    cp -v "zuser.example" "~/.zuser"
 fi
 
-cp -r .src/src/.* ~ 
+cp -rv .src/src/.* ~ 
 
 git clone https://github.com/junegunn/fzf ~/.zsh/plugins/fzf
 ~/.zsh/plugins/fzf/install --bin

@@ -12,6 +12,7 @@ autoload -U colors && colors
 source ~/.zalias
 source ~/.zfunc
 source ~/.zprompt
+source ~/.zshenv
 
 # - - - plugins - - -
 source ~/.zsh/plugins/fzf/shell/completion.zsh

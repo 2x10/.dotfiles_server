@@ -25,13 +25,17 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias cls='clear'
 alias q='exit'
-alias quit='q'
-alias reload='source ~/.zshrc && tmux source-file ~/.tmux.conf'
-alias fetch="clear && fastfetch"
-alias update="~/Scripts/update.sh"
+alias :q="exit"
+alias quit='exit'
+
+alias cls='clear'
 
 alias nano="nvim"
 alias vim="nvim"
 alias vi="vim"
+
+alias reload='source ~/.zshrc && tmux source-file ~/.tmux.conf'
+alias fetch="clear && fastfetch"
+alias update="~/Scripts/update.sh"
+

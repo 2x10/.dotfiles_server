@@ -170,9 +170,6 @@ require("lazy").setup({
           width = 30,
           side = "left",
         },
-        filters = {
-          custom = { ".git" },
-        },
       })
     end,
   },
@@ -265,8 +262,30 @@ require("lazy").setup({
     lazy = false, -- neo-tree will lazily load itself
     config = function()
       require("neo-tree").setup({
+        sort_function = function(a, b)
+          if a.type == b.type then
+            -- both directories or both files -> here we sort files by extension
+            if a.type == "file" then
+              local ext_a = a.ext or a.name:match("^.+%.(.+)$") or ""
+              local ext_b = b.ext or b.name:match("^.+%.(.+)$") or ""
+              if ext_a ~= ext_b then
+                return ext_a:lower() < ext_b:lower()
+              end
+            end
+            return a.path:lower() < b.path:lower()
+          else
+            return a.type == "directory"
+          end
+        end,
         filesystem = {
           hijack_netrw_behavior = "disabled",
+          opts = {
+            filesystem = {
+              filtered_items = {
+                visible = true,
+              },
+            },
+          },
           window = {
             mappings = {
               ["<space>"] = "noop",
